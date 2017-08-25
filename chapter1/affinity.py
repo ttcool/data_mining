@@ -32,6 +32,7 @@ for sample in X:
 support = valid_rules
 confidence = defaultdict(float)
 
+#按支持度倒序排列字典
 sorted_support = sorted(support.items(), key=itemgetter(1), reverse=True)
 print sorted_support
 
@@ -50,6 +51,7 @@ for premise, conclusion in valid_rules.keys():
     #print(" - Support: {0}".format(support[(premise,conclusion)]))
     #print(" - Confidence: {0:.1f}%".format(confidence[(premise,conclusion)]*100))
 
+#按置信度倒序排列字典    
 sorted_confidence = sorted(confidence.items(), key=itemgetter(1), reverse=True)
 
 print sorted_confidence
